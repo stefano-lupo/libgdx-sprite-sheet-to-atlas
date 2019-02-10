@@ -3,54 +3,61 @@ This python script generates **atlas** files for [libGDX](https://github.com/lib
 
 Usage
 -----
-> python ./libgdx-sprite-sheet-to-atlas.py sprite-sheet-filename sprite-sheet-width-px sprite-sheet-height-px tile-width-px tile-height-px [tile-count-limit]
-
-* *sprite-sheet-filename* - sprite sheet texture filename
-* *sprite-sheet-width-px* - width of sprite sheet texture in pixels
-* *sprite-sheet-height-px* - height of sprite sheet texture in pixels
-* *tile-width-px* - width of single tile/sprite in pixels
-* *tile-height-px* - height of single tile/sprite in pixels
-* *tile-count-limit* - limit of generated tiles (optional)
-
-Example
--------
-> python ./libgdx-sprite-sheet-to-atlas.py mytiles.png 256 128 128 64
-
-Generated mytiles.atlas:
+```shell
+> python ./main.py <./path/to/sprite_sheet.png> <./path/to/sprite_sheet_descriptor.json> 
 ```
-mytiles.png
-size: 256,128
+
+- `<sprite_sheet.png>` is the path to your spritesheet
+- `<sprite_sheet_descriptor.json>` is the JSON description of your spritesheet  (see exmaple directory)
+
+Run the Example
+-------
+> python ./main.py ./example/dude.png ./example/dude.json
+>
+Generated dude.atlas:
+```
+dude.png
+size: 832,1344
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-mytiles_00000
-  rotate: false
-  xy: 0, 0
-  size: 128, 64
-  orig: 128, 64
-  offset: 0, 0
-  index: -1
-mytiles_00001
-  rotate: false
-  xy: 128, 0
-  size: 128, 64
-  orig: 128, 64
-  offset: 0, 0
-  index: -1
-mytiles_00002
-  rotate: false
-  xy: 0, 64
-  size: 128, 64
-  orig: 128, 64
-  offset: 0, 0
-  index: -1
-mytiles_00003
-  rotate: false
-  xy: 128, 64
-  size: 128, 64
-  orig: 128, 64
-  offset: 0, 0
-  index: -1
+jump_up_00000
+	rotate: false
+	xy: 0.0, 0.0
+	size: 64.0, 64.0
+	orig: 64.0, 64.0
+	offset: 0, 0
+	index: -1
+jump_up_00001
+	rotate: false
+	xy: 64.0, 0.0
+	size: 64.0, 64.0
+	orig: 64.0, 64.0
+	offset: 0, 0
+	index: -1
+jump_up_00002
+	rotate: false
+	xy: 128.0, 0.0
+	size: 64.0, 64.0
+	orig: 64.0, 64.0
+	offset: 0, 0
+	index: -1
+jump_up_00003
+	rotate: false
+	xy: 192.0, 0.0
+	size: 64.0, 64.0
+	orig: 64.0, 64.0
+	offset: 0, 0
+	index: -1
+jump_up_00004
+	rotate: false
+	xy: 256.0, 0.0
+	size: 64.0, 64.0
+	orig: 64.0, 64.0
+	offset: 0, 0
+	index: -1
+
+  ... rest ommitted
 ```
 
 Notes

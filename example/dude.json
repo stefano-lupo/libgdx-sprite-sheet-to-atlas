@@ -1,0 +1,98 @@
+ {
+   "width": 832,
+   "height": 1344,
+    
+  "row_info":
+    [
+      {
+        "name": "jump_up",
+        "num_cols": 7
+      },
+      {
+        "name": "jump_left",
+        "num_cols": 7
+      },
+      {
+        "name": "jump_down",
+        "num_cols": 7
+      },
+      {
+        "name": "jump_right",
+        "num_cols": 7
+      },
+
+      {
+        "name": "dance_up",
+        "num_cols": 8
+      },
+      {
+        "name": "dance_left",
+        "num_cols": 8
+      },
+      {
+        "name": "dance_down",
+        "num_cols": 8
+      },
+      {
+        "name": "dance_right",
+        "num_cols": 8
+      },
+
+      {
+        "name": "walk_up",
+        "num_cols": 9
+      },
+      {
+        "name": "walk_left",
+        "num_cols": 9
+      },
+      {
+        "name": "walk_down",
+        "num_cols": 9
+      },
+      {
+        "name": "walk_right",
+        "num_cols": 9
+      },
+
+      {
+        "name": "bow_up",
+        "num_cols": 6
+      },
+      {
+        "name": "attack_left",
+        "num_cols": 6
+      },
+      {
+        "name": "attack_down",
+        "num_cols": 6
+      },
+      {
+        "name": "attack_right",
+        "num_cols": 6
+      },
+
+      {
+        "name": "bow_up",
+        "num_cols": 13
+      },
+      {
+        "name": "bow_left",
+        "num_cols": 13
+      },
+      {
+        "name": "bow_down",
+        "num_cols": 13
+      },
+      {
+        "name": "bow_right",
+        "num_cols": 13
+      },
+
+      {
+        "name": "die",
+        "num_cols": 6
+      }
+      
+    ]
+}
