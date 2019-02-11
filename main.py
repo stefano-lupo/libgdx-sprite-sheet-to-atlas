@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Simple atlas file generator for libGDX
 # Original https://github.com/patwork/libgdx-sprite-sheet-to-atlas
-# Reworked by Stefano Lupo Feb 2019
+# Reworked by Stefano Lupo Feb 2019 to use a JSON file instead of CL args
 #
 
 import sys
@@ -30,11 +30,11 @@ def createAtlas(args):
 	spriteSheetWidth = metadata["width"]
 	spriteSheetHeight = metadata["height"]
 
-	rowInfo = metadata["row_info"]
-	maxNumCols = max(rowInfo, key=lambda x : x["num_cols"])["num_cols"]
+	rowInfo = metadata["rowInfo"]
+	maxNumCols = max(rowInfo, key=lambda x : x["numCols"])["numCols"]
 	numRows = len(rowInfo)
-	spriteWidth = spriteSheetWidth / maxNumCols
-	spriteHeight = spriteSheetHeight / numRows
+	spriteWidth = int(spriteSheetWidth / maxNumCols)
+	spriteHeight = int(spriteSheetHeight / numRows)
 
 	print("Using max number of columns: " + str(maxNumCols))
 	print("Using sprite dimensions: %fx%f" % (spriteWidth, spriteHeight))
@@ -50,13 +50,13 @@ def createAtlas(args):
 		rowCounter = 0
 		for row in rowInfo:
 			name = row["name"]
-			numCols = row["num_cols"]
+			numCols = row["numCols"]
 			for i in range(0, numCols):
 				x = i * spriteWidth
 				y = rowCounter * spriteWidth
 				body = bodyFormat.format(name, i, x, y, spriteWidth, spriteHeight, spriteWidth, spriteHeight, 0, 0)
 				atlas.write(body)
-		rowCounter = rowCounter + 1
+			rowCounter = rowCounter + 1
 
 
 if __name__ == '__main__':
