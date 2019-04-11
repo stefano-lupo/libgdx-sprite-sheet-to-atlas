@@ -1,98 +1,98 @@
- {
-   "width": 832,
-   "height": 1344,
-    
-  "row_info":
-    [
-      {
-        "name": "jump_up",
-        "num_cols": 7
-      },
-      {
-        "name": "jump_left",
-        "num_cols": 7
-      },
-      {
-        "name": "jump_down",
-        "num_cols": 7
-      },
-      {
-        "name": "jump_right",
-        "num_cols": 7
-      },
+{
+  "width": 832,
+  "height": 1344,
+   
+ "rowInfo":
+   [
+     {
+       "name": "JUMP_UP",
+       "numCols": 7
+     },
+     {
+       "name": "JUMP_LEFT",
+       "numCols": 7
+     },
+     {
+       "name": "JUMP_DOWN",
+       "numCols": 7
+     },
+     {
+       "name": "JUMP_RIGHT",
+       "numCols": 7
+     },
 
-      {
-        "name": "dance_up",
-        "num_cols": 8
-      },
-      {
-        "name": "dance_left",
-        "num_cols": 8
-      },
-      {
-        "name": "dance_down",
-        "num_cols": 8
-      },
-      {
-        "name": "dance_right",
-        "num_cols": 8
-      },
+     {
+       "name": "DANCE_UP",
+       "numCols": 8
+     },
+     {
+       "name": "DANCE_LEFT",
+       "numCols": 8
+     },
+     {
+       "name": "DANCE_DOWN",
+       "numCols": 8
+     },
+     {
+       "name": "DANCE_RIGHT",
+       "numCols": 8
+     },
 
-      {
-        "name": "walk_up",
-        "num_cols": 9
-      },
-      {
-        "name": "walk_left",
-        "num_cols": 9
-      },
-      {
-        "name": "walk_down",
-        "num_cols": 9
-      },
-      {
-        "name": "walk_right",
-        "num_cols": 9
-      },
+     {
+       "name": "MOVE_UP",
+       "numCols": 9
+     },
+     {
+       "name": "MOVE_LEFT",
+       "numCols": 9
+     },
+     {
+       "name": "MOVE_DOWN",
+       "numCols": 9
+     },
+     {
+       "name": "MOVE_RIGHT",
+       "numCols": 9
+     },
 
-      {
-        "name": "bow_up",
-        "num_cols": 6
-      },
-      {
-        "name": "attack_left",
-        "num_cols": 6
-      },
-      {
-        "name": "attack_down",
-        "num_cols": 6
-      },
-      {
-        "name": "attack_right",
-        "num_cols": 6
-      },
+     {
+       "name": "ATTACK_UP",
+       "numCols": 6
+     },
+     {
+       "name": "ATTACK_LEFT",
+       "numCols": 6
+     },
+     {
+       "name": "ATTACK_DOWN",
+       "numCols": 6
+     },
+     {
+       "name": "ATTACK_RIGHT",
+       "numCols": 6
+     },
 
-      {
-        "name": "bow_up",
-        "num_cols": 13
-      },
-      {
-        "name": "bow_left",
-        "num_cols": 13
-      },
-      {
-        "name": "bow_down",
-        "num_cols": 13
-      },
-      {
-        "name": "bow_right",
-        "num_cols": 13
-      },
+     {
+       "name": "BOW_UP",
+       "numCols": 13
+     },
+     {
+       "name": "BOW_LEFT",
+       "numCols": 13
+     },
+     {
+       "name": "BOW_DOWN",
+       "numCols": 13
+     },
+     {
+       "name": "BOW_RIGHT",
+       "numCols": 13
+     },
 
-      {
-        "name": "die",
-        "num_cols": 6
-      }
-      
-    ]
+     {
+       "name": "DIE",
+       "numCols": 6
+     }
+     
+   ]
 }

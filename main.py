@@ -11,6 +11,7 @@ import json
 def createAtlas(args):
 	spriteSheetFilenameWithPath = args[1]
 	jsonFilename = args[2]
+	isSpriteType = not args[3]
 
 	directory = os.path.dirname(spriteSheetFilenameWithPath)
 	spriteSheetFileName = os.path.basename(spriteSheetFilenameWithPath)
@@ -33,8 +34,13 @@ def createAtlas(args):
 	rowInfo = metadata["rowInfo"]
 	maxNumCols = max(rowInfo, key=lambda x : x["numCols"])["numCols"]
 	numRows = len(rowInfo)
-	spriteWidth = int(spriteSheetWidth / maxNumCols)
-	spriteHeight = int(spriteSheetHeight / numRows)
+
+	if isSpriteType:
+		spriteWidth = int(spriteSheetWidth / maxNumCols)
+		spriteHeight = int(spriteSheetHeight / numRows)
+	else:
+		spriteWidth = int(args[4])
+		spriteHeight = int(args[5])
 
 	print("Using max number of columns: " + str(maxNumCols))
 	print("Using sprite dimensions: %fx%f" % (spriteWidth, spriteHeight))
@@ -47,22 +53,35 @@ def createAtlas(args):
 
 	with open(atlasFilename, "w+") as atlas:
 		atlas.write(header)
-		rowCounter = 0
-		for row in rowInfo:
-			name = row["name"]
-			numCols = row["numCols"]
-			for i in range(0, numCols):
-				x = i * spriteWidth
-				y = rowCounter * spriteWidth
-				body = bodyFormat.format(name, i, x, y, spriteWidth, spriteHeight, spriteWidth, spriteHeight, 0, 0)
-				atlas.write(body)
-			rowCounter = rowCounter + 1
 
+		if (isSpriteType):	
+			rowCounter = 0
+			for row in rowInfo:
+				name = row["name"]
+				numCols = row["numCols"]
+				for i in range(0, numCols):
+					x = i * spriteWidth
+					y = rowCounter * spriteWidth
+					body = bodyFormat.format(name, i, x, y, spriteWidth, spriteHeight, spriteWidth, spriteHeight, 0, 0)
+					atlas.write(body)
+				rowCounter = rowCounter + 1
+		else:
+			x = 0
+			y = 0
+			for row in rowInfo:
+				name = row["name"]
+				body = bodyFormat.format(name, 0, x, y, spriteWidth, spriteHeight, spriteWidth, spriteHeight, 0, 0)
+				atlas.write(body)
+				x = x + spriteWidth
+				if (x == spriteSheetWidth):
+					x = 0
+					y = y + spriteHeight
+				
 
 if __name__ == '__main__':
 
-	if len(sys.argv) != 3:
-		sys.stderr.write("Invalid usage: Use python3 %s <sprite-sheet-filename> <json-filename>\n" % __file__)
+	if len(sys.argv) != 4 and len(sys.argv) != 6:
+		sys.stderr.write("Invalid usage: Use python3 %s <sprite-sheet-filename> <json-filename> <0|1 for sprite/texture> <sprite_width> <sprite_height>\n" % __file__)
 		sys.exit(1)
 
 	createAtlas(sys.argv)
